@@ -1,10 +1,11 @@
 import React from 'react'
+// import useButton from './useButton';
 
-const Button = () => {
+const Button = ({bgcolor, colorParams, action =()=>{}, text}) => {
+  // const [value, setValue] = useButton();
   return (
-    <div>
-      Button
-    </div>
+    <button style={{background: bgcolor, color: colorParams, margin: "5px"}}
+    onClick={action}> Save </button>
   )
 }
 
