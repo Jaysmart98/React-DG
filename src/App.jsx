@@ -1,56 +1,93 @@
-// import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
 import Button from './components/Button/Button.jsx'
-import Input from './components/Input/Input.jsx'
-import Footer from './components/Footer/Footer.jsx'
-import Navbar from './components/Navbar/Navbar.jsx'
-import Card from './components/Card/Card.jsx'
+import Card from './components/Card/Card';
+import Input from './components/Input/Input'
+import teen from './assets/Images/teen.jpg'
 
 function App() {
-  
+
+  const cardDetails = [
+    {
+      text: "Good Morning",
+      description: "Welcome to my react class",
+      image: teen,
+      btnText:"View"
+    },
+     {
+      text: "Good Morning",
+      description: "Welcome to my react class",
+      image: teen,
+      btnText:"View"
+    },
+     {
+      text: "Good Morning",
+      description: "Welcome to my react class",
+      image: teen,
+      btnText:"View"
+    },
+     {
+      text: "Good Morning",
+      description: "Welcome to my react class",
+      image: teen,
+      btnText:"View"
+    },
+     {
+      text: "Good Morning",
+      description: "Welcome to my react class",
+      image: teen,
+      btnText:"View"
+    },
+     {
+      text: "Good Morning",
+      description: "Welcome to my react class",
+      image: teen,
+      btnText:"View"
+    },
+     {
+      text: "Good Morning",
+      description: "Welcome to my react class",
+      image: teen,
+      btnText:"View"
+    },
+     {
+      text: "Good Morning",
+      description: "Welcome to my react class",
+      image: teen,
+      btnText:"View"
+    },
+     {
+      text: "Good Morning",
+      description: "Welcome to my react class",
+      image: teen,
+      btnText:"View"
+    }
+  ]
 
   return (
     <>
-      <div>
-        <Navbar/>
-
-        <Card/>
-
-        {/* <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a> */}
-
-      </div>
-      <h1>Welcome to React</h1>
-      <p style={{color: 'white', margin: "5px", textAlign:"center"}}>Inline styling</p>
+    <div className='cardContainer'>
+      {cardDetails?.map((detail, index) => (
+         <Card text={detail.text} description={detail.description} image={detail.image} btnText={detail.btnText} key={index}/>
+      ))}
+      
+    </div>
       <div className="card">
-        <Input type="text" bgcolor={"white"} colorParams={"black"} required={false}/>
-        <br />
-        <Input type={'email'} placeholder={"Enter your email"} label={"Email"} required={true}/>
-        <br/>
-         <Input type={"password"} placeholder={"Enter your password"} label={"Password"} required={true}/>
-        <br />
-        <Button bgcolor={"red"} action={()=>alert("Welcome")} text={"Alert"}/>
-        <Button bgcolor={"orange"} text={"Alert"}/>
-        <Button bgcolor={"white"} colorParams={"black"} text={"Alert"}/>
-        <Button bgcolor={"green"} text={"Alert"}/>
-        <Button bgcolor={"yellow"} colorParams={"black"} text={"Alert"}/>
-
-        {/* <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button> */}
-
-        <p>Edit <code>src/App.jsx</code> and save to test HMR</p>
+        <Button bgColor={"red"} colorParams={"#fff"} action={()=> alert("welcome")} text={"Alert"}/>
+        <Button  bgColor={"#000"} colorParams={"red"} action={()=> confirm("Are you sure you wonna close this")} text={"Confirm"}/>
+        <Button  bgColor={"blue"} colorParams={"white"} action={() => prompt("Good code")} text={"Prompt"}/>
       </div>
-      <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
-      <Footer/>
+      <div className='card'>
+        <Input type={"text"} placeholder={"Enter your name"} label={"Name"} required={false}/>
+        <br/>
+        <Input type={"email"} placeholder={"Enter your email"} label={"Email"} required={true}/>
+        <br />
+        <Input type={"checkbox"} placeholder='Male' label={"gender"} />
+         <Input type={"radio"} placeholder='Male' label={"gender"} />
+      </div>
+      
     </>
   )
 }
 
-export default App
+export default App;
