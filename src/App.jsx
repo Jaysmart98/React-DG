@@ -6,26 +6,35 @@ import Button from './components/Button/Button.jsx'
 import Input from './components/Input/Input.jsx'
 import Footer from './components/Footer/Footer.jsx'
 import Navbar from './components/Navbar/Navbar.jsx'
+import Card from './components/Card/Card.jsx'
 
 function App() {
-  // const [count, setCount] = useState(0)
+  
 
   return (
     <>
       <div>
         <Navbar/>
-        <a href="https://vite.dev" target="_blank">
+
+        <Card/>
+
+        {/* <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        </a> */}
+
       </div>
       <h1>Welcome to React</h1>
       <p style={{color: 'white', margin: "5px", textAlign:"center"}}>Inline styling</p>
       <div className="card">
-        <Input type="text" bgcolor={"white"} colorParams={"black"}/>
+        <Input type="text" bgcolor={"white"} colorParams={"black"} required={false}/>
+        <br />
+        <Input type={'email'} placeholder={"Enter your email"} label={"Email"} required={true}/>
         <br/>
+         <Input type={"password"} placeholder={"Enter your password"} label={"Password"} required={true}/>
+        <br />
         <Button bgcolor={"red"} action={()=>alert("Welcome")} text={"Alert"}/>
         <Button bgcolor={"orange"} text={"Alert"}/>
         <Button bgcolor={"white"} colorParams={"black"} text={"Alert"}/>
