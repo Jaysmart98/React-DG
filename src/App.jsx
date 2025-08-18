@@ -1,11 +1,15 @@
-
 import './App.css'
 import Button from './components/Button/Button.jsx'
 import Card from './components/Card/Card';
 import Input from './components/Input/Input'
 import teen from './assets/Images/teen.jpg'
+import { useState } from 'react';
 
 function App() {
+
+const [value, setValue] = useState("Welcome");
+const [list, setNewList] = useState(["1. name ", "2. gender ", "3. dept "]);
+
 
   const cardDetails = [
     {
@@ -66,6 +70,10 @@ function App() {
 
   return (
     <>
+    <h1>{value}</h1>
+
+    
+
     <div className='cardContainer'>
       {cardDetails?.map((detail, index) => (
          <Card text={detail.text} description={detail.description} image={detail.image} btnText={detail.btnText} key={index}/>
@@ -85,6 +93,14 @@ function App() {
         <Input type={"checkbox"} placeholder='Male' label={"gender"} />
          <Input type={"radio"} placeholder='Male' label={"gender"} />
       </div>
+
+
+    <div>
+      {list}
+    </div>
+
+      <Button  bgColor={"blue"} colorParams={"white"} action={() => setValue("Welcome to React Class")} text={"newValue"}/>
+      <Button  bgColor={"blue"} colorParams={"white"} action={() => setNewList([...list, "4. LGBTQ"])} text={"newGender"}/>
       
     </>
   )
