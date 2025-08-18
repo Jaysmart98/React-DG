@@ -1,7 +1,7 @@
 import React from 'react'
-import Teen from '../../assets/Images/teen.jpg'
-import Button from '../Button/Button.jsx'
-import Input from '../Input/Input.jsx'
+// import teen from '../../assets/Images/Teen.jpg'
+import Button from '../../primaryComponents/Button/Button.jsx'
+import Input from '../../primaryComponents/Input/Input.jsx'
 import './Card.css'
 
 const Card = ({ text, description, image, btnText }) => {
@@ -10,7 +10,7 @@ const Card = ({ text, description, image, btnText }) => {
     <div className='card-container'>
       <div className='cardComponent'>
           <div style={{ justifyContent: "center" }} >
-              <img src={image} alt="Teen" width={100} height={100}/>
+              <img src={image} alt="teen" width={100} height={100}/>
           </div>
           <Input label={""}/>
           <p>{text}</p>

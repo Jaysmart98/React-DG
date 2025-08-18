@@ -1,0 +1,60 @@
+import teen from '../../assets/Images/Teen.jpg';
+
+  const cardDetails = [
+    {
+      text: "Good Morning",
+      description: "Welcome to my react class",
+      image: teen,
+      btnText:"View"
+    },
+     {
+      text: "Good Morning",
+      description: "Welcome to my react class",
+      image: teen,
+      btnText:"View"
+    },
+     {
+      text: "Good Morning",
+      description: "Welcome to my react class",
+      image: teen,
+      btnText:"View"
+    },
+     {
+      text: "Good Morning",
+      description: "Welcome to my react class",
+      image: teen,
+      btnText:"View"
+    },
+     {
+      text: "Good Morning",
+      description: "Welcome to my react class",
+      image: teen,
+      btnText:"View"
+    },
+     {
+      text: "Good Morning",
+      description: "Welcome to my react class",
+      image: teen,
+      btnText:"View"
+    },
+     {
+      text: "Good Morning",
+      description: "Welcome to my react class",
+      image: teen,
+      btnText:"View"
+    },
+     {
+      text: "Good Morning",
+      description: "Welcome to my react class",
+      image: teen,
+      btnText:"View"
+    },
+     {
+      text: "Good Morning",
+      description: "Welcome to my react class",
+      image: teen,
+      btnText:"View"
+    }
+  ]
+
+  export default cardDetails;
