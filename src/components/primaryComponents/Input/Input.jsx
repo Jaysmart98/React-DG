@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Input = ({bgcolor="#fff", colorParams="black", type="text", placeholder="anything", label="Free", required}) => {
+  
   return (
    <>
     <div style={{display:"flex", gap:"10px"}} >
