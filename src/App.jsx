@@ -1,27 +1,63 @@
 import './App.css'
-import cardDetails from '../constant/index.js';
+// import cardDetails from '../constant/index.js';
 import Button from './components/primaryComponents/Button/Button.jsx'
 // import Card from './components/secondaryComponents/Card/Card.jsx';
 import Input from './components/primaryComponents/Input/Input.jsx'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
 
+
 const [value, setValue] = useState("Welcome");
 const [list, setNewList] = useState(["1. name ", "2. gender ", "3. dept "]);
-const [count, setCount] = useState(0);
+const [count, setCount] = useState(60);
+const [instruction, setNewInstruction] = useState("Please read the instruction carefully before you start the exam.");
+
+
+// const [data, setData] = useState [
+//   {
+//     text: "Good Morning",
+//     description: "Welcome to my react class",
+//     btnText:"View"
+//   },
+//    {
+//     text: "Good Morning",
+//     description: "Welcome to my react class",
+//     btnText:"View"
+//   }
+
+// ];
+
+useEffect(() => {
+  if (count > 1) {
+    setTimeout(() => {
+      setCount( count - 1)
+    }, 6000);
+  }
+}, [count]);
+
+
+
+useEffect(() => {
+ setTimeout(() => {
+    setNewInstruction("Your can start your exam now!")
+  }
+  , 6000);
+  return;
+}, [])
 
 
 
   return (
     <>
     <h1>{value} {count}</h1>
+    <p>{instruction}</p>
 
-    <div className='cardContainer'>
+    {/* <div className='cardContainer'>
       {cardDetails?.map((detail, index) => (
          <Card text={detail.text} description={detail.description} image={detail.image} btnText={detail.btnText} key={index}/>
       ))}
-    </div>
+    </div> */}
 
       <div className="card">
         <Button bgColor={"red"} colorParams={"#fff"} action={()=> alert("welcome")} text={"Alert"}/>
@@ -44,7 +80,6 @@ const [count, setCount] = useState(0);
       <Button  bgColor={"blue"} colorParams={"white"} action={() => setValue("Welcome to React Class")} text={"newValue"}/>
       <Button  bgColor={"blue"} colorParams={"white"} action={() => setNewList([...list, "4. LGBTQ"])} text={"newGender"}/>
       <Button  bgColor={"blue"} colorParams={"white"} action={() => setCount(count + 1)} text={"Increment Count"}/>
-
     </>
   )
 }
