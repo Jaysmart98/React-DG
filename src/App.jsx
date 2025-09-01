@@ -39,8 +39,8 @@ useEffect(() => {
 
 
 useEffect(() => {
- setTimeout(() => {
-    setNewInstruction("Your can start your exam now!")
+ setInterval(() => {
+    alert("Your can start your exam now!")
   }
   , 6000);
   return;
@@ -51,7 +51,7 @@ useEffect(() => {
   return (
     <>
     <h1>{value} {count}</h1>
-    <p>{instruction}</p>
+    {/* <p>{instruction}</p> */}
 
     {/* <div className='cardContainer'>
       {cardDetails?.map((detail, index) => (
