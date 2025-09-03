@@ -11,7 +11,7 @@ function App() {
 const [value, setValue] = useState("Welcome");
 const [list, setNewList] = useState(["1. name ", "2. gender ", "3. dept "]);
 const [count, setCount] = useState(60);
-const [instruction, setNewInstruction] = useState("Please read the instruction carefully before you start the exam.");
+// const [instruction, setNewInstruction] = useState("Please read the instruction carefully before you start the exam.");
 
 
 // const [data, setData] = useState [
