@@ -10,7 +10,7 @@ const StopWatch = () => {
     const [hoursCount, setHoursCount] = useState(0);
 
     useEffect(() => {
-      setInterval(() => {
+      setTimeout(() => {
         if(seconds >= 0) {
             setSeconds(seconds + 1);
         }      }

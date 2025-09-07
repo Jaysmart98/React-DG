@@ -1,4 +1,4 @@
-import Input from './components/PrimaryComponents/Input/Input'
+import Input from './components/PrimaryComponents/Input/Input.jsx'
 import Button from './components/PrimaryComponents/Button/Button'
 import React from 'react'
 import './App.css'
