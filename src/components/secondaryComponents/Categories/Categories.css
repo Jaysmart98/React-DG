@@ -25,9 +25,33 @@ body{
 .input-container{
   border: 1px solid black;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Input-container2{
+  align-items: center;
+}
+
+#sub-container{
+ display: flex;
+  justify-content: center;
+  width: 100%;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+#subInput{
+  background-color: #ffff;
+  width: 85%;
 }
 
 Input{
+  border: none;
+}
+
+input{
   border: none;
 }
 

@@ -5,65 +5,62 @@ import Input from '../../primaryComponents/Input/Input.jsx'
 import './Categories.css'
 
 const Categories = () => {
+    const [subCategories, setSubCategories] = useState([
+        { 
+          id: crypto.randomUUID(), 
+          value: '' }
+      ]);
 
-    const [list, setList] = useState([]);
-    const [newList, setNewList] = useState("");
-    const [count, setCount] = useState(1);
+      const addSubCategory = () => {
+    const newId = crypto.randomUUID();
+    setSubCategories([...subCategories, { id: newId, value: '' }]);
+  };
+
+  const deleteSubCategory = (id) => {
+    setSubCategories(subCategories.filter(sub => sub.id !== id));
+  };
+
+   const handleInputChange = (id, event) => {
+    setSubCategories(
+      subCategories.map(sub =>
+        sub.id === id ? { ...sub, value: event.target.value } : sub
+      )
+    );
+  };
   
-  
-    const handleAddTodo = () => {
-       console.log(list)
-       
-    }
-  
-    const  handleDelete = (id) => {
-      setList(list.filter((item) => item.id !== id));
-    }
 
   
     return (
-      <>
-  
+
         <div id='main-container'>
-          
         <div id='container1'>
           <h4>Categories List</h4>
 
           <div className='input-container'>
-          <Input type='text' label='' placeholder={"Enter your category name"} onChange={(e) => setNewList(e.target.value)} />
+          <Input type='text' label='' placeholder={"Enter your category name"} />
           </div>
         </div>
-
-          <hr />
   
           <div className='todo-list'>
           <h4>List :</h4>
 
-                <div id='map'>
-                <Button text={"Delete"} action={handleDelete}/>
-                <Input label='' placeholder='Enter sub-category name'/>
-                </div>
+        <div className='Input-container2'>
 
-            <ul>
-              {list.map((item) => 
-                  (<li  key={item.id}> 
-                    <Input id="checkboxx" type='checkbox'/>
-                    {item.task} 
-                    <Button colorParams={"#ffff"} bgcolor={"blue"} text={"Delete"} action={() => handleDelete(item?.id)}/>
-              </li>))}
-            </ul>
-          </div>
+         {subCategories.map((sub) => (
+            <div id='sub-container' key={sub.id}>
+              <button onClick={() => deleteSubCategory(sub.id)}> Delete </button>
+              <input id='subInput' type="text" value={sub.value} onChange={(e) => handleInputChange(sub.id, e)} placeholder={"Enter Sub-category name"} />
+            </div>
+          ))}
+        </div>
 
           <div id='btn-container'>
-          <Button bgcolor={"white"} colorParams={"#ffff"} action={handleAddTodo} text={"Add another sub-category"}/>
+          <button onClick={addSubCategory}>Add another sub-category</button>
           </div>
 
         </div>
-      </>
+        </div>
     )
   }
-  
 
 export default Categories
-
-
