@@ -5,14 +5,16 @@ import './Categories.css'
 
 
 const Categories = () => {
+
     const [subCategories, setSubCategories] = useState([
         { 
-          id: crypto.randomUUID(), 
+          id: Math.random(), 
           value: '' }
       ]);
 
-  const addSubCategory = () => {
-    const newId = crypto.randomUUID();
+
+   const addSubCategory = () => {
+    const newId = Math.random() + 1;
     setSubCategories([...subCategories, { id: newId, value: '' }]);
   };
 
@@ -21,10 +23,7 @@ const Categories = () => {
   };
 
    const handleInputChange = (id, event) => {
-    setSubCategories(
-      subCategories.map(sub =>
-        sub.id === id ? { ...sub, value: event.target.value } : sub
-      )
+    setSubCategories( subCategories.map(sub => sub.id === id ? { ...sub, value: event.target.value } : sub)
     );
   };
 
@@ -54,7 +53,7 @@ const Categories = () => {
         </div>
 
           <div id='btn-container'>
-          <button onClick={addSubCategory}>Add another sub-category</button>
+          <button id='addBtn' onClick={addSubCategory}>Add another sub-category</button>
           </div>
 
         </div>
