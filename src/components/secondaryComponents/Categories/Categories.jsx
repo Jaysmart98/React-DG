@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import Button from '../../primaryComponents/Button/Button.jsx'
+// import Button from '../../primaryComponents/Button/Button.jsx'
 import Input from '../../primaryComponents/Input/Input.jsx'
 import './Categories.css'
 
