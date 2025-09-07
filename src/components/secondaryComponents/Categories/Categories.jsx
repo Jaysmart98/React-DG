@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
-// import Button from '../../primaryComponents/Button/Button.jsx'
 import Input from '../../primaryComponents/Input/Input.jsx'
 import './Categories.css'
+
 
 const Categories = () => {
     const [subCategories, setSubCategories] = useState([
@@ -11,7 +11,7 @@ const Categories = () => {
           value: '' }
       ]);
 
-      const addSubCategory = () => {
+  const addSubCategory = () => {
     const newId = crypto.randomUUID();
     setSubCategories([...subCategories, { id: newId, value: '' }]);
   };
@@ -27,7 +27,6 @@ const Categories = () => {
       )
     );
   };
-  
 
   
     return (
